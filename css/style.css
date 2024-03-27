@@ -1,0 +1,144 @@
+/* Start Global Rules */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: #111;
+}
+/* End Global Rules */
+/* Start spinner container */
+.spinner-container {
+  background-color: #222;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner-container .spinner {
+  width: 800px;
+  height: 100px;
+  background-color: #555;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  border: 4px solid #007bff;
+  position: relative;
+}
+
+.spinner-container .spinner:hover {
+   animation-name: spinner;
+   animation-duration: 1s;
+   animation-timing-function: linear;
+   animation-iteration-count: infinite;
+}
+
+@keyframes spinner {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.spinner-container .spinner .center {
+  background-color: black;
+  width: 95px;
+  height: 95px;
+  z-index: 1;
+  border-radius: 50%;
+  border: 4px solid #007bff;
+}
+
+.spinner-container .column {
+  background-color: #555;
+  width: 100px;
+  height: 800px;
+  border-radius: 50%;
+  border: 4px solid #007bff;
+  position: absolute;
+  top: -400%;
+}
+/* End spinner container */
+/* Start keys container */
+.keys {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  perspective: 1000px;
+}
+
+.keys-inner {
+  background-color: darkcyan;
+  width: 30%;
+  height: 30%;
+  border: 10px solid #007bff;
+  border-radius: 25%;
+  transition: transform;
+  transform-style: preserve-3d;
+}
+
+.keys .keys-inner:hover{
+  transform: rotateY(180deg);
+}
+
+.keys .keys-inner .key {
+  width: 100%;
+  height: 100%;
+  border-radius: 25%;
+  position: absolute;
+  font-size: 60px;
+  backface-visibility: hidden;
+}
+
+.keys .keys-inner .on {
+  background-color: darkseagreen;
+}
+
+.keys .keys-inner .off {
+  transform: rotateY(180deg);
+}
+/* End keys container */
+/* Start Card */
+.card {
+  height: 100vh;
+  background-color: #113;
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .card-inner {
+  background-color: darkblue;
+  width: 50%;
+  height: 40%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card .card-inner:hover {
+  transform: rotateY(180deg);
+}
+.card .card-inner .side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  font-size: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .card-inner .front {
+  background-color: darkred;
+}
+
+.card .card-inner .back {
+  transform: rotateY(180deg);
+  
+}
+
+/* End Card */
